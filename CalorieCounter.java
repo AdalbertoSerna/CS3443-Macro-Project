@@ -1,23 +1,27 @@
 package edu.utsa.cs3443.macrocounter.Model;
 
+import java.util.ArrayList;
+
 public class CalorieCounter {
-    int fats;
-    int carbs;
-    int proteins;
-    int currentTotal = 0;
+   private int fats;
+   private int carbs;
+   private int proteins;
+   private int currentTotal = 0;
+    private ArrayList<Integer> fatsArr = new ArrayList<>();
+    private ArrayList<Integer> carbsArr = new ArrayList<>();
+    private ArrayList<Integer> proteinArr = new ArrayList<>();
+
+    private static CalorieCounter calorieCounter = null;
 
 
-    public CalorieCounter(int fats, int carbs, int proteins) {
-        this.fats = fats;
-        this.carbs = carbs;
-        this.proteins = proteins;
-    }
+    private CalorieCounter(){};
 
-    public CalorieCounter(int fats, int carbs, int proteins, int currentTotal) {
-        this.fats = fats;
-        this.carbs = carbs;
-        this.proteins = proteins;
-        this.currentTotal = currentTotal;
+
+    public static CalorieCounter getInstance(){
+        if(calorieCounter == null){
+            calorieCounter = new CalorieCounter();
+        }
+        return calorieCounter;
     }
 
 
@@ -41,11 +45,50 @@ public class CalorieCounter {
         return proteins;
     }
 
+    public void setCurrentCount(int currentTotal){
+        this.currentTotal =currentTotal;
+
+    }
+    public int getCarbsArr(){
+        int total = 0;
+        for(int index:carbsArr){
+            total += index;
+
+        }
+        return total;
+
+    }
+    public int getProteinsArr(){
+        int total = 0;
+        for(int index:proteinArr){
+            total += index;
+
+        }
+        return total;
+
+    }
+    public int getFatsArr(){
+        int total = 0;
+        for(int index:fatsArr){
+            total += index;
+
+        }
+        return total;
+
+    }
+
     public void setProteins(int proteins) {
         this.proteins = proteins;
     }
-    public int countCalories(int fats, int carbs, int proteins, int currentTotal){
-        currentTotal += fats*9 + carbs*4 + proteins*4;
+    public int countCalories(int fats, int carbs, int proteins){
+
+        fats *=9;
+        carbs *=4;
+        proteins*=4;
+        fatsArr.add(fats);
+        carbsArr.add(carbs);
+        proteinArr.add(proteins);
+        currentTotal += fats + carbs + proteins;
 
     return currentTotal;
     }
