@@ -5,10 +5,20 @@ public class WeightLoseCalculator {
     double lbsPerWeek;
     int dailyCalorieGoal;
 
-    public WeightLoseCalculator(double lbsPerWeek) {
+    private static WeightLoseCalculator weightLoseCalculator = null;
+    private WeightLoseCalculator(double lbsPerWeek) {
         this.lbsPerWeek = lbsPerWeek;
     }
-
+    
+    public static WeightLoseCalculator getInstance(double lbsPerWeek){
+        if(weightLoseCalculator == null){
+            weightLoseCalculator = new WeightLoseCalculator(lbsPerWeek);
+        }
+        return weightLoseCalculator;
+    }
+    public static WeightLoseCalculator getInstance(){
+        return weightLoseCalculator;
+    }
     public int getDailyCalorieGoal() {
         return dailyCalorieGoal;
     }
