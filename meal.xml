@@ -7,7 +7,7 @@
     android:background="@drawable/background_gradient">
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/fats"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/carbs"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
@@ -28,7 +28,30 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+        app:layout_constraintTop_toBottomOf="@+id/fats" />
+
+    <EditText
+        android:id="@+id/protein"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carbs" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:backgroundTint="@color/button"
+        android:text="submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -42,17 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
-        android:backgroundTint="@color/button"
-        android:text="submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -62,7 +74,7 @@
         android:text="Fats"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber3"
+        app:layout_constraintStart_toEndOf="@+id/fats"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
@@ -74,7 +86,7 @@
         android:text="Carbs"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
+        app:layout_constraintStart_toEndOf="@+id/carbs"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
@@ -86,19 +98,7 @@
         android:text="Protein"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+        app:layout_constraintStart_toEndOf="@+id/protein"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="45dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
