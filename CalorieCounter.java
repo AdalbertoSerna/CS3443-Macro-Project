@@ -49,6 +49,9 @@ public class CalorieCounter {
         this.currentTotal =currentTotal;
 
     }
+    public int getCurrentTotal(){
+        return currentTotal;
+    }
     public int getCarbsArr(){
         int total = 0;
         for(int index:carbsArr){
@@ -89,6 +92,7 @@ public class CalorieCounter {
         carbsArr.add(carbs);
         proteinArr.add(proteins);
         currentTotal += fats + carbs + proteins;
+        setCurrentCount(currentTotal);
 
     return currentTotal;
     }
